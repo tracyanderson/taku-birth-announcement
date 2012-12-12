@@ -9,36 +9,49 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <script type="text/javascript" src="javascripts/processing.js"></script>
     <script type="text/processing" data-processing-target="pjsCanvas">
+      int numDragged = 0;
 
       PFont font;
       font = loadFont("FFScala-32.vlw");
       textFont(font);
 
       void setup() {
+
         size (610,612);
         background(0);
         smooth();
       }
 
+
       void draw() {
+
+
         textSize (106);
         text("TAKUMA", 119.2, 152);
         textSize (33);
         text("June 10, 2012", 125, 400);
         fill(0);
+
+
       }
 
       void mouseDragged() {
+
+        if (numDragged < 3) {
+
         stroke(random(255),random(255),random(255));
         strokeWeight(10);
         line(mouseX,mouseY,150,150);
       }
 
+      }
       void mousePressed() {
+
         stroke(0);
         fill(random(255),random(255),random(255));
         strokeWeight(0.03);
         ellipse(mouseX,mouseY,20,20);
+
       }
     </script>
 
